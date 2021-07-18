@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>Coreference</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2 class="text-center">Select the same coreferences in the same color</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="color-picker col-lg-3 text-center">
+                    <label for="color">Choose a Color</label>
+                    <input type="color" id="color" name="color" value="#f6b73c">
+                </div>
+                <div class="color-selected col-lg-3 text-center">
+                    <select class="color-selector form-select form-select-lg mb-3">
+                        <option selected>Or Select a Previous Color</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="context col-lg-6"></div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="coref col-lg-6">
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>start</th>
+                                <th>end</th>
+                                <th>text</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="d-grid gap-2 d-block col-lg-6">
+                    <hr>
+                    <button class="btn btn-info btn-lg mt-3 btn-checker" type="submit"
+                        onclick="checkAnnotation()">Check</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4 mb-5">
+                <div class="col-lg-6" id="check">
+                    <pre></pre>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            String.prototype.rtrim = function (s) {
+                if (s == undefined)
+                    s = '\\s';
+                return this.replace(new RegExp("[" + s + "]*$"), '');
+            };
+            String.prototype.ltrim = function (s) {
+                if (s == undefined)
+                    s = '\\s';
+                return this.replace(new RegExp("^[" + s + "]*"), '');
+            };
+        </script>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+            integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="main.js"></script>
+    </body>
+
+    <style>
+        mark {
+            background-color: rgba(3, 161, 252, 0.35);
+            padding: 4.8px 0;
+        }
+    </style>
+
+</html>

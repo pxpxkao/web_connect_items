@@ -1,0 +1,38 @@
+.container {
+    margin-top: 2rem;
+    font-size: 24px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 0;
+    background-color: #fff;
+    opacity: 0.5;
+    border-top: 3px dashed #000;
+}
+
+.btn-checker {
+    background-color: #a6e9d5;
+}
+
+.btn-checker:hover {
+    background-color: #20c997;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.context {
+    line-height: 2;
+}
+
+#check {
+    overflow: scroll;
+    height: 500px;
+    border: 1px #000 solid;
+}
